@@ -3,6 +3,10 @@ package studio8;
 import support.cse131.NotYetImplementedException;
 
 public class MultipleChoiceQuestion extends Question {
+	private String prompt; 
+	private String answer; 
+	private int points; 
+	private String[] choices; 
 
 	/**
 	 * Constructor
@@ -15,15 +19,18 @@ public class MultipleChoiceQuestion extends Question {
 		// Call the super class constructor, then create and set
 		// instance variables for any values that aren't handled
 		// by the base class
-		throw new NotYetImplementedException();
+		super(prompt,answer,points); 
+		this.choices = choices; 
 	}
 	
 	/**
 	 * Display the prompt for the question in addition to 
 	 * the choices present for the question.
 	 */
+	    
 	public void displayPrompt() {
-		throw new NotYetImplementedException();
+		super.displayPrompt();
+
 	}
 	
 	/**
@@ -31,11 +38,13 @@ public class MultipleChoiceQuestion extends Question {
 	 * @return String[] of choices
 	 */
 	public String[] getChoices() {
-		throw new NotYetImplementedException();
+		return getChoices(); 
 	}
 	
-	public static void main(String[] args) {
-		// TODO: create your own MultipleChoiceQuestion
+	public static void main(String[] args) { 
+		String choices [] = {"water","coffe","milk","juice"}; 
+		MultipleChoiceQuestion num1 = new MultipleChoiceQuestion("What drink do cows make?", "milk", 1, choices); 
+	    
 	}
 
 }
